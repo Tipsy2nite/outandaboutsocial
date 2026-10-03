@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Out &amp; About — Log off. Go outside. Bring friends.</title>
+<meta name="description" content="Parks, porch concerts, open-invite birthdays, and the delightfully specific meetups you didn't know existed. Join the Out & About waitlist in Austin.">
+<meta property="og:title" content="Out & About — Log off. Go outside. Bring friends.">
+<meta property="og:description" content="Parks, porch concerts, open-invite birthdays, and delightfully specific meetups. Join the waitlist.">
+<meta property="og:url" content="https://outandaboutsocial.net/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FAF3E6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3E6; --cream-2:#F3EADA; --ink:#1F3A2B; --ink-soft:#3C5446;
+    --sun:#F2A33A; --sun-dark:#D98A22; --mint:#E3EFDF; --lav:#E6DDF3; --peach:#F6DCCB; --sky:#D7E6F0; --butter:#F5E6B0;
+    --line:#1F3A2B; --radius:22px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:Figtree,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--ink)}
+  h1,h2,h3,.brand{font-family:Fraunces,Georgia,serif;font-weight:800;letter-spacing:-.01em;margin:0}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--cream);padding:8px 14px;border-radius:10px;z-index:10}
+  .skip:focus{left:8px}
+  :focus-visible{outline:3px solid var(--sun-dark);outline-offset:3px}
+
+  /* header */
+  header{padding:22px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-size:24px;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand svg{width:30px;height:30px}
+  .nav a{font-weight:600;text-decoration:none;margin-left:22px;font-size:16px}
+  .nav a:hover{text-decoration:underline}
+
+  /* hero */
+  .hero{position:relative;padding:40px 0 64px;overflow:hidden}
+  .sun{position:absolute;right:-40px;top:-30px;width:240px;height:240px;animation:spin 60s linear infinite;pointer-events:none}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sun{animation:none}.btn{transition:none}}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;position:relative}
+  h1{font-size:clamp(44px,7vw,84px);line-height:1.02}
+  .lede{font-size:20px;color:var(--ink-soft);max-width:34ch;margin:24px 0 0}
+  .vibe-label{font-weight:700;margin:28px 0 12px;font-size:17px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+  .chip{font:inherit;font-size:16px;font-weight:600;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:999px;padding:10px 18px;cursor:pointer;transition:background .15s,transform .1s}
+  .chip:hover{background:var(--cream-2)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+  .chip:active{transform:scale(.97)}
+  .note{display:flex;gap:12px;align-items:flex-start;background:var(--mint);border-radius:16px;padding:14px 18px;margin-top:26px;font-size:15.5px;max-width:520px}
+  .note svg{flex:none;margin-top:2px}
+
+  /* card / form */
+  .card{background:#fff;border:2px solid var(--line);border-radius:var(--radius);box-shadow:6px 6px 0 var(--line);padding:30px}
+  .card h2{font-size:30px;line-height:1.1}
+  .card p.sub{margin:8px 0 20px;color:var(--ink-soft);font-size:16px}
+  label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+  input[type=text],input[type=email]{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid #C9BFAE;border-radius:14px;background:var(--cream);color:var(--ink)}
+  input[type=text]:focus,input[type=email]:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px rgba(242,163,58,.45)}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:15px;margin-top:16px}
+  .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--ink);flex:none}
+  .picked{font-size:14.5px;color:var(--ink-soft);margin-top:14px;min-height:1.4em}
+  .btn{display:block;width:100%;font:inherit;font-weight:700;font-size:19px;color:var(--ink);background:var(--sun);border:2px solid var(--line);border-radius:18px;padding:16px;margin-top:22px;cursor:pointer;box-shadow:5px 5px 0 var(--line);transition:transform .1s,box-shadow .1s}
+  .btn:hover{background:#F5B25A}
+  .btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--line)}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  .fine{font-size:13.5px;color:var(--ink-soft);margin-top:14px}
+  .err{color:#A3341C;font-weight:600;font-size:15px;margin-top:12px}
+  .hp{position:absolute;left:-5000px}
+  .done{text-align:center;padding:20px 0}
+  .done .big{font-size:56px;line-height:1}
+
+  /* sections */
+  section{padding:72px 0}
+  section h2{font-size:clamp(32px,4.5vw,48px);line-height:1.08}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  .peek{background:var(--cream-2);border-top:2px solid var(--line);border-bottom:2px solid var(--line)}
+  .events{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  .ev{display:flex;background:#fff;border:2px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:4px 4px 0 var(--line)}
+  .ev .date{flex:none;width:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:2px dashed var(--line);font-weight:700;font-size:13px;letter-spacing:.08em}
+  .ev .date b{font-family:Fraunces,Georgia,serif;font-size:34px;line-height:1;letter-spacing:0;margin:4px 0}
+  .ev .body{padding:16px 18px}
+  .ev .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .ev h3{font-size:21px;line-height:1.15;margin:6px 0}
+  .ev p{margin:0;font-size:15px;color:var(--ink-soft)}
+  .pill{display:inline-block;font-size:13px;font-weight:600;background:var(--mint);border-radius:999px;padding:3px 10px;margin-top:8px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  .step{border:2px solid var(--line);border-radius:20px;padding:24px;background:#fff}
+  .step .n{font-family:Fraunces,Georgia,serif;font-size:40px;color:var(--sun-dark);line-height:1}
+  .step h3{font-size:22px;margin:10px 0 6px}
+  .step p{margin:0;font-size:16px;color:var(--ink-soft)}
+  .guide{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+  .guide ol{margin:0;padding-left:22px}
+  .guide li{margin-bottom:12px;font-size:17px}
+  .guide li b{font-weight:700}
+  footer{border-top:2px solid var(--line);padding:36px 0 48px;font-size:15px}
+  footer .bar{flex-wrap:wrap}
+  footer p{margin:6px 0;color:var(--ink-soft)}
+  .privacy{max-width:760px}
+  .privacy p{font-size:16.5px}
+
+  @media (max-width:900px){
+    .hero-grid,.guide{grid-template-columns:1fr;gap:40px}
+    .events,.steps{grid-template-columns:1fr}
+    .sun{width:150px;height:150px;right:-30px;top:-20px}
+    .nav{display:none}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 16px}
+    body{font-size:17px}
+    .card{padding:22px;box-shadow:4px 4px 0 var(--line)}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#join">Skip to the waitlist</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#" aria-label="Out & About home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#F2A33A" stroke-width="5" stroke-linecap="round"><line x1="32" y1="4" x2="32" y2="12"/><line x1="32" y1="52" x2="32" y2="60"/><line x1="4" y1="32" x2="12" y2="32"/><line x1="52" y1="32" x2="60" y2="32"/><line x1="12" y1="12" x2="17.5" y2="17.5"/><line x1="46.5" y1="46.5" x2="52" y2="52"/><line x1="12" y1="52" x2="17.5" y2="46.5"/><line x1="46.5" y1="17.5" x2="52" y2="12"/></g><circle cx="32" cy="32" r="13" fill="#F2A33A"/></svg>
+      Out &amp; About
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#peek">What's coming</a>
+      <a href="#how">How it works</a>
+      <a href="#guidelines">Guidelines</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">
+      <g stroke="#F2A33A" stroke-width="9" stroke-linecap="round">
+        <line x1="100" y1="10" x2="100" y2="36"/><line x1="100" y1="164" x2="100" y2="190"/>
+        <line x1="10" y1="100" x2="36" y2="100"/><line x1="164" y1="100" x2="190" y2="100"/>
+        <line x1="36" y1="36" x2="54" y2="54"/><line x1="146" y1="146" x2="164" y2="164"/>
+        <line x1="36" y1="164" x2="54" y2="146"/><line x1="146" y1="54" x2="164" y2="36"/>
+      </g>
+      <circle cx="100" cy="100" r="44" fill="#F2A33A"/>
+    </svg>
+
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Log off.<br>Go outside.<br>Bring friends.</h1>
+        <p class="lede">Parks, porch concerts, open-invite birthdays, and the delightfully specific meetups you didn't know existed. What's your vibe?</p>
+        <p class="vibe-label" id="vibe-label">Pick as many as you like:</p>
+        <ul class="chips" aria-labelledby="vibe-label">
+          <li><button type="button" class="chip" aria-pressed="false">Parks &amp; picnics</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Live music</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Open-invite parties</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Community days</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Quiet hangs</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Games &amp; hobbies</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Outdoor wellness</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Family-friendly</button></li>
+          <li><button type="button" class="chip" aria-pressed="false">Late-night</button></li>
+        </ul>
+        <div class="note">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F3A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+          <span>Verified hosts, and private addresses stay hidden until you RSVP.</span>
+        </div>
+      </div>
+
+      <div class="card" id="join">
+        <div id="form-wrap">
+          <h2>Be first outside.</h2>
+          <p class="sub">We're launching in Austin soon. Join the waitlist and we'll tell you when the first gatherings go live.</p>
+          <form id="waitlist" novalidate>
+            <label for="name">First name</label>
+            <input id="name" name="name" type="text" autocomplete="given-name" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <label for="hood">Neighborhood or ZIP <span style="font-weight:400">(optional)</span></label>
+            <input id="hood" name="neighborhood" type="text" autocomplete="postal-code" placeholder="e.g. South Austin or 78704">
+            <div class="picked" id="picked" aria-live="polite"></div>
+            <label class="check"><input type="checkbox" id="adult" name="is_18_plus" required> I'm 18 or older.</label>
+            <label class="check"><input type="checkbox" id="host" name="wants_to_host"> I'd like to host gatherings, too.</label>
+            <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="err" id="err" role="alert"></div>
+            <button class="btn" type="submit" id="go">Let's go outside</button>
+            <p class="fine">We'll only email you about Out &amp; About's launch. We never sell your data. <a href="#privacy">Privacy</a></p>
+          </form>
+        </div>
+        <div class="done" id="done" hidden tabindex="-1">
+          <div class="big" aria-hidden="true">☀</div>
+          <h2 style="margin-top:12px">You're on the list.</h2>
+          <p class="sub">We'll be in touch before the first gatherings go live. In the meantime: go outside.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="peek" id="peek">
+    <div class="wrap">
+      <p class="kicker">A peek at what's coming</p>
+      <h2>What a week outside could look like</h2>
+      <div class="events">
+        <article class="ev"><div class="date" style="background:var(--lav)">FRI<b>2</b>OCT</div>
+          <div class="body"><span class="tag">Music · Cozy</span><h3>Porch Jazz Trio</h3><p>7:00 PM · Bouldin Creek (general area)</p><span class="pill">74° · Clear evening</span></div></article>
+        <article class="ev"><div class="date" style="background:var(--mint)">SAT<b>3</b>OCT</div>
+          <div class="body"><span class="tag">Parks · Crowd</span><h3>Sunset Picnic &amp; Frisbee</h3><p>6:30 PM · Zilker Park, Great Lawn</p><span class="pill">Step-free</span></div></article>
+        <article class="ev"><div class="date" style="background:var(--butter)">SUN<b>4</b>OCT</div>
+          <div class="body"><span class="tag">Niche · Cozy</span><h3>Dawn Birdwatch Walk</h3><p>7:00 AM · McKinney Falls State Park</p><span class="pill">62° · Cool and clear</span></div></article>
+      </div>
+      <p class="fine" style="margin-top:18px">Example gatherings for illustration.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>Find it. RSVP. Show up.</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Find your thing</h3><p>Browse gatherings near you by vibe, size, and access needs, from a 6-person birdwatch to a park-wide roller disco.</p></div>
+        <div class="step"><div class="n">2</div><h3>RSVP safely</h3><p>Hosts are verified. Home addresses unlock only after you RSVP. Go solo; plenty of people do.</p></div>
+        <div class="step"><div class="n">3</div><h3>Or host your own</h3><p>Open-invite birthday? Porch concert? Post it, set the size, and let the neighborhood come to you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="peek" id="guidelines">
+    <div class="wrap guide">
+      <div>
+        <p class="kicker">Community guidelines</p>
+        <h2>Everyone should feel safe showing up.</h2>
+        <p style="color:var(--ink-soft)">We're here to get people outside and together. By using Out &amp; About, you agree to:</p>
+      </div>
+      <ol>
+        <li><b>Be who you say you are.</b> Real name, real photo, one account. No impersonation.</li>
+        <li><b>Respect everyone.</b> No harassment, hate, threats, or discrimination based on race, ethnicity, religion, disability, sexual orientation, gender identity, age, or anything else about who someone is.</li>
+        <li><b>Consent comes first.</b> Gatherings are social, not dating services. Unwanted advances, touching, or messages after someone says no will get you removed.</li>
+        <li><b>Keep private things private.</b> Don't share a host's address, other guests' details, or photos of people who didn't agree to be posted.</li>
+        <li><b>No selling or scamming.</b> No spam, pyramid schemes, fake events, or collecting money outside the app for events that don't exist.</li>
+        <li><b>Drink and act responsibly.</b> Follow the law and park rules. Nobody under 21 drinks. No selling alcohol or drugs at gatherings.</li>
+        <li><b>Leave it better.</b> Clean up, respect neighbors, keep noise reasonable, and follow park rules.</li>
+        <li><b>Speak up.</b> If something feels off, leave, and report it. In an emergency, call 911 first.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap privacy">
+      <p class="kicker">Waitlist privacy</p>
+      <h2>Your info, kept simple.</h2>
+      <p>When you join the waitlist we collect your first name, email, optional neighborhood, the vibes you picked, and whether you'd like to host. We use it only to tell you about Out &amp; About's launch in your area and to understand what people want first.</p>
+      <p>We don't sell or share your information for advertising. You can unsubscribe from any email, or ask us to see or delete your info at any time by writing to <a href="mailto:outandaboutsocialnet@gmail.com">outandaboutsocialnet@gmail.com</a>.</p>
+      <p>Out &amp; About is for adults 18 and older.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap bar">
+    <div>
+      <div class="brand" style="font-size:20px">Out &amp; About</div>
+      <p>Made in Austin, Texas. Log off. Go outside.</p>
+    </div>
+    <p>© <span id="yr">2026</span> Out &amp; About · <a href="#privacy">Privacy</a> · <a href="#guidelines">Guidelines</a></p>
+  </div>
+</footer>
+
+<script>
+  // Where waitlist sign-ups are sent. See README for setup.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/outandaboutsocialnet@gmail.com";
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const chips = [...document.querySelectorAll('.chip')];
+  const picked = document.getElementById('picked');
+  const selected = () => chips.filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.textContent.trim());
+  function showPicked(){
+    const s = selected();
+    picked.textContent = s.length ? 'Your vibes: ' + s.join(', ') : '';
+  }
+  chips.forEach(c => c.addEventListener('click', () => {
+    c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    showPicked();
+  }));
+
+  const form = document.getElementById('waitlist');
+  const err = document.getElementById('err');
+  const btn = document.getElementById('go');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    err.textContent = '';
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    if (!name) { err.textContent = 'Please add your first name.'; form.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email.'; form.email.focus(); return; }
+    if (!form.adult.checked) { err.textContent = 'Out & About is for adults 18 and older.'; form.adult.focus(); return; }
+    if (form._honey.value) return;
+
+    btn.disabled = true; btn.textContent = 'Joining…';
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Out & About waitlist sign-up',
+          _template: 'table',
+          name, email,
+          neighborhood: form.neighborhood.value.trim(),
+          vibes: selected().join(', ') || '(none picked)',
+          wants_to_host: form.host.checked ? 'Yes' : 'No',
+          is_18_plus: 'Yes'
+        })
+      });
+      if (!res.ok) throw new Error(res.status);
+      document.getElementById('form-wrap').hidden = true;
+      const done = document.getElementById('done');
+      done.hidden = false; done.focus();
+    } catch (x) {
+      err.textContent = "Something went wrong on our end. Please try again in a minute.";
+      btn.disabled = false; btn.textContent = "Let's go outside";
+    }
+  });
+</script>
+</body>
+</html>
